@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbaja1gv7h5l7"]
+
+[ext_resource type="Texture2D" uid="uid://clt1y3ibkc0pv" path="res://pictures/враг.png" id="1_ru5sk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ljxpe"]
+size = Vector2(231, 334)
+
+[node name="enemy" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.48, 2.16)
+texture = ExtResource("1_ru5sk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.5, -4)
+shape = SubResource("RectangleShape2D_ljxpe")

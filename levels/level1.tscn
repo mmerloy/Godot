@@ -1,0 +1,63 @@
+[gd_scene load_steps=9 format=3 uid="uid://do37xdgiq48h"]
+
+[ext_resource type="PackedScene" uid="uid://btqhmsi8rtr1r" path="res://prefabs/platform_1.tscn" id="1_m1lnb"]
+[ext_resource type="Texture2D" uid="uid://ol6d8ge57wek" path="res://pictures/фон.webp" id="2_gm4ix"]
+[ext_resource type="PackedScene" uid="uid://bavh0lff0vqba" path="res://prefabs/player.tscn" id="3_ee3ee"]
+[ext_resource type="PackedScene" uid="uid://de0stvua53j33" path="res://prefabs/platform_2.tscn" id="4_o46uv"]
+[ext_resource type="PackedScene" uid="uid://bit0oregk8vps" path="res://prefabs/coin.tscn" id="5_kh6tk"]
+[ext_resource type="Script" path="res://scripts/Label.gd" id="6_hpdsw"]
+[ext_resource type="PackedScene" uid="uid://cbaja1gv7h5l7" path="res://prefabs/enemy.tscn" id="7_8rvvb"]
+[ext_resource type="Script" path="res://scripts/Label_fireball.gd" id="8_ncgm6"]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(79, 0)
+
+[node name="Platform1" parent="." instance=ExtResource("1_m1lnb")]
+position = Vector2(149, 441)
+
+[node name="Background" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(-316, -120)
+scale = Vector2(7.46375, 3.36667)
+texture = ExtResource("2_gm4ix")
+centered = false
+
+[node name="Player" parent="." instance=ExtResource("3_ee3ee")]
+position = Vector2(22, 292)
+
+[node name="Platform2" parent="." instance=ExtResource("4_o46uv")]
+scale = Vector2(1.88, 1)
+
+[node name="Platform3" parent="." instance=ExtResource("4_o46uv")]
+position = Vector2(1447, 377)
+
+[node name="Coin" parent="." instance=ExtResource("5_kh6tk")]
+position = Vector2(138, 331)
+
+[node name="UI_coins" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="UI_coins"]
+offset_left = 2.0
+offset_top = 73.0
+offset_right = 49.0
+offset_bottom = 99.0
+scale = Vector2(1.92793, 2.04142)
+text = "Coins:"
+script = ExtResource("6_hpdsw")
+
+[node name="Coin2" parent="." instance=ExtResource("5_kh6tk")]
+position = Vector2(1146, 450)
+
+[node name="enemy" parent="." instance=ExtResource("7_8rvvb")]
+position = Vector2(1040, 353)
+
+[node name="UI_fireball" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="UI_fireball"]
+offset_left = 1.0
+offset_top = 42.0
+offset_right = 63.0
+offset_bottom = 68.0
+scale = Vector2(1.8, 1.76)
+text = "Fireball:"
+script = ExtResource("8_ncgm6")
